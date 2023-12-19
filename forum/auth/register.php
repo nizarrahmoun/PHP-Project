@@ -82,6 +82,20 @@ if(empty($_POST['name']) OR empty($_POST['email']) OR empty($_POST['username']) 
 			<div class="col-md-4">
 				<div id="sidebar">
 					<div class="block">
-					
-					
+						</div>
+					</div>
+				</div>
+
 <?php require '../includes/footer.php';  ?>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+					
+					

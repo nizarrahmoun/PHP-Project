@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2023 at 09:36 PM
+-- Generation Time: Dec 20, 2023 at 12:26 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `forum`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int(5) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `adminname` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -85,6 +99,15 @@ CREATE TABLE `topics` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `topics`
+--
+
+INSERT INTO `topics` (`id`, `title`, `category`, `body`, `user_name`, `user_image`, `created_at`) VALUES
+(15, 'topic No 1', 'Devlopment', 'hello', 'admin', 'gravatar.png', '2023-12-19 23:21:09'),
+(16, 'topic No 2', 'Search Engines', 'hey', 'admin', 'gravatar.png', '2023-12-19 23:21:49'),
+(17, 'topic No 3', 'Devlopment', 'hello from admin', 'admin', 'gravatar.png', '2023-12-19 23:23:29');
+
 -- --------------------------------------------------------
 
 --
@@ -103,8 +126,21 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`, `about`, `avatar`, `created_at`) VALUES
+(5, 'admin', 'admin@admin.com', 'admin', '$2y$10$VRmayE.A0TLrxF/L2N9f9eNIOENukFnqdXDncG3/Oog2ZJv9gdxoW', 'hello', 'gravatar.png', '2023-12-19 23:20:13');
+
+--
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `categories`
@@ -129,6 +165,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -138,13 +180,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `topics`
 --
 ALTER TABLE `topics`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
