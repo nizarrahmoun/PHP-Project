@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../Users/mohamed/Desktop/Article Project/admin-panel/admins"
+		},
+		{
+			"path": "../../../Users/mohamed/Desktop/Article Project/admin-panel/categories-admins"
+		},
+		{
+			"path": "../../../Users/mohamed/Desktop/Article Project/admin-panel/layouts"
+		},
+		{
+			"path": "../../../Users/mohamed/Desktop/Article Project/admin-panel/replies-admins"
+		},
+		{
+			"path": "../../../Users/mohamed/Desktop/Article Project/admin-panel/styles"
+		},
+		{
+			"path": "../../../Users/mohamed/Desktop/Article Project/admin-panel/topics-admins"
+		}
+	],
+	"settings": {}
+}
